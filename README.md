@@ -16,3 +16,5 @@ Once installed you can add a new custom profile type ORCID on Users>Accounts>Use
 ![alt text](https://github.com/cjpm1983/moodle-orcid-custom-profile-field/blob/main/img/configorcid.png?raw=true)
 
 By configuring the orcid profile field you can define a hyperlink URI that will be generated dynamically in each user profile respectively. Example: http://orcid.org/1234-5678-9012-3456
+
+ELINF - VLIRED - 2022
