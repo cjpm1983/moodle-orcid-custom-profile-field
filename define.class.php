@@ -45,7 +45,7 @@ class profile_define_orcid extends profile_define_base {
         $form->addHelpButton('param4', 'profilefieldlink', 'admin');
 
         // Param 5 for text type contains link target.
-	// Incluimos el target por razon de si desea que nlace a otra uri y no poner fijo orcid.org
+	    // Include the target in case you want it to link to another uri and not set orcid.org
         $targetoptions = array( ''       => get_string('linktargetnone', 'editor'),
                                 '_blank' => get_string('linktargetblank', 'editor'),
                                 '_self'  => get_string('linktargetself', 'editor'),
