@@ -10,3 +10,4 @@
  */
 //name of the plugin should be defined.
 $string['pluginname'] = 'ORCID';
+$string['privacy:metadata'] = 'The ORCID custom profile field type is just an extension of the core user profile fields. It does not share data with any external platform.';

@@ -34,7 +34,6 @@ class profile_define_orcid extends profile_define_base {
      */
     function define_form_specific($form) {
 
-        //Parametros tomados del text_profilefield por su similitud
 
         // Default data.
         $form->addElement('text', 'defaultdata', get_string('profiledefaultdata', 'admin'), 'size="50"');
@@ -70,42 +69,17 @@ class profile_define_orcid extends profile_define_base {
         // overwrite if necessary
         $errors = array();
 
-        // Revisamos que se haya pasado un orcid contra el regex
-        //if ($data->param1 > $data->param2) {
-          //  $errors['param1'] = get_string('startyearafterend', 'profilefield_datetime');
-        //}
+        // regex check
+
         if ($data->defaultdata!='' && !preg_match('/(\d{4}\-\d{4}\-\d{4}\-\d{3}(?:\d|X))/', $data->defaultdata) ){
            $errors['defaultdata'] = "Invalid ORCID error-".preg_last_error();	
 	}
-	//else{
-        //$errors['defaultdata'] = "ok kuki";	
-        //}
        
 
 
 
         return $errors;
     }
-
-    /**
-     * Alter form based on submitted or existing data
-     *
-     * @param moodleform $mform reference to moodleform
-     */
-   // function define_after_data(&$mform) {
-        // overwrite if necessary
-    //}
-
-    /**
-     * Preprocess data from the add/edit profile field form
-     * before it is saved.
-     *
-     * @param object $data from the add/edit profile field form
-     * @return object processed data object
-     */
-    //function define_save_preprocess($data) {
-        // overwrite if necessary
-    //}
 
 }
 

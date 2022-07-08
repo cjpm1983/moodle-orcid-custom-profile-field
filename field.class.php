@@ -73,18 +73,6 @@ class profile_field_orcid extends profile_field_base {
     }
 
 
-
-    /**
-     * Sets the default data for the field in the form object
-     *
-     * @param moodleform $mform instance of the moodleform class
-     */
-    //function edit_field_set_default(&$mform) {
-       // if (!empty($default)) {
-        //    $mform->setDefault($this->inputname, $this->field->defaultdata);
-      //  }
-  ////  }
-
     /**
      * Validate the form field from profile page
      *
@@ -95,56 +83,21 @@ class profile_field_orcid extends profile_field_base {
         // overwrite if necessary
         $errors = array();
 
-        // Revisamos que se haya pasado un orcid contra el regex
-
 	$arreglo = $array = get_object_vars($usernew);
-
-
 
         if ( !preg_match('/(\d{4}\-\d{4}\-\d{4}\-\d{3}(?:\d|X))/', $arreglo[$this->inputname] ) ){
 
            $errors[$this->inputname] = "Invalid ORCID error-".preg_last_error();	
 	}
 
-       
 
-//var_dump($arreglo);exit();
-//$errors['username'] = "Bumbata";	
        
 
         return $errors;
 
     }
 
-    /**
-     * Process the data before it gets saved in database
-     *
-     * @param stdClass $data from the add/edit profile field form
-     * @param stdClass $datarecord The object that will be used to save the record
-     * @return stdClass
-     */
-/*
-    function edit_save_data_preprocess($data, &$datarecord) {
-        return $data;
-    }
-]/
-    /**
-     * HardFreeze the field if locked.
-     *
-     * @param moodleform $mform instance of the moodleform class
-     */
   
-/*
-  function edit_field_set_locked($mform) {
-        if (!$mform->elementExists($this->inputname)) {
-            return;
-        }
-        if ($this->is_locked() and !has_capability('moodle/user:update', get_context_instance(CONTEXT_SYSTEM))) {
-            $mform->hardFreeze($this->inputname);
-            $mform->setConstant($this->inputname, $this->data);
-        }
-    }
-*/
 
     /**
      * Return the field type and null properties.
