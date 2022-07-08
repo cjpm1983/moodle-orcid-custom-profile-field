@@ -83,9 +83,9 @@ class profile_field_orcid extends profile_field_base {
         // overwrite if necessary
         $errors = array();
 
-	$arreglo = $array = get_object_vars($usernew);
+	$input_name_array = $array = get_object_vars($usernew);
 
-        if ( !preg_match('/(\d{4}\-\d{4}\-\d{4}\-\d{3}(?:\d|X))/', $arreglo[$this->inputname] ) ){
+        if ( !preg_match('/(\d{4}\-\d{4}\-\d{4}\-\d{3}(?:\d|X))/', $input_name_array[$this->inputname] ) ){
 
            $errors[$this->inputname] = "Invalid ORCID error-".preg_last_error();	
 	}
